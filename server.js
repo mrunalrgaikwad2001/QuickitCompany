@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname,"frontend/public")));
 app.use(express.json());
 app.use(cors({
     origin:"https://www.quickitcompany.com",
-    origin:`https://quickitcompany.com`,
+"https://quickitcompany.com",
     crediantials:true}));
 
 app.use("/contact",contactRoutes);
@@ -51,7 +51,7 @@ app.use((req,res,next)=>{
 });
 
 app.get("/",(req,res)=>{
-    res.render("index.html");
+    res.sendFile(path.join(__dirname,"frontend","public","index.html");
 });
 
 
@@ -59,7 +59,7 @@ app.get("/",(req,res)=>{
 
 //EJS for rendering success message
 app.set("views",path.join(__dirname,"views"));
-app.set("view engine","ejs");
+//app.set("view engine","ejs");
 
 
 
