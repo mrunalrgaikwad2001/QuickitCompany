@@ -50,7 +50,7 @@ app.use((req,res,next)=>{
 });
 
 app.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname,"public","index.html"));
+    res.sendFile(path.join(__dirname,"public_html","index.html"));
 });
 
 
