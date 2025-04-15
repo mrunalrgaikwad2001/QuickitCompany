@@ -26,11 +26,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,"frontend/public")));
 app.use(express.json());
 app.use(cors({
-<<<<<<< HEAD
     origin:"https://www.quickitcompany.com",
-=======
     origin:`https://quickitcompany.com`,
->>>>>>> fb796fa (Fix CORS issue for frontend)
     crediantials:true}));
 
 app.use("/contact",contactRoutes);
