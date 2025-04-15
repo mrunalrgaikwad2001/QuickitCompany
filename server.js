@@ -32,7 +32,7 @@ app.use("/contact",contactRoutes);
 app.use("/api/auth",authRoutes);
 app.use("/api/booking",bookingRoutes);
 app.use("/search-service",searchServiceRoutes);
-app.use("/api",require(`./routes/index`));
+
 app.use(session({
     secret:"Mrunal08Kiranraj17",
     resave:false,
