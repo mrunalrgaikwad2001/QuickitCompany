@@ -26,9 +26,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,"frontend/public")));
 app.use(express.json());
 app.use(cors({
-    origin:"https://www.quickitcompany.com",
-"https://quickitcompany.com",
-    crediantials:true}));
+    origin:"https://quickitcompany.com",
+    credentials:true}));
 
 app.use("/contact",contactRoutes);
 app.use("/api/auth",authRoutes);
@@ -51,7 +50,7 @@ app.use((req,res,next)=>{
 });
 
 app.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname,"frontend","public","index.html");
+    res.sendFile(path.join(__dirname,"public","index.html"));
 });
 
 
