@@ -23,7 +23,6 @@ const __dirname=path.dirname(__filename);
 //Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static(path.join(__dirname,"frontend/public")));
 app.use(express.json());
 app.use(cors({
     origin:"https://quickitcompany.com",
@@ -33,6 +32,7 @@ app.use("/contact",contactRoutes);
 app.use("/api/auth",authRoutes);
 app.use("/api/booking",bookingRoutes);
 app.use("/search-service",searchServiceRoutes);
+app.use("/api",require(`./routes/index`));
 app.use(session({
     secret:"Mrunal08Kiranraj17",
     resave:false,
@@ -49,9 +49,7 @@ app.use((req,res,next)=>{
     next();
 });
 
-app.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname,"index.html"));
-});
+
 
 
 
