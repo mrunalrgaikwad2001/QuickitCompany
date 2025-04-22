@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors({
-    origin:"https://quickitcompany.com",
+    origin:["https://www.quickitcompany.com"],
     credentials:true}));
 
 app.use("/contact",contactRoutes);
@@ -50,10 +50,6 @@ app.use((req,res,next)=>{
 });
 
 
-
-
-
-
 //EJS for rendering success message
 app.set("views",path.join(__dirname,"views"));
 app.set("view engine","ejs");
@@ -66,3 +62,6 @@ app.listen(PORT,()=>{
     console.log(`Server running on quickitcompany.com`);
 
 });
+app.get("/", (req, res) => {
+    res.send("Backend is live. Visit https://quickitcompany.com for the frontend.");
+  });
